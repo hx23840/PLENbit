@@ -1,5 +1,4 @@
 # PLENbit
-
 PLENbit Control Module
 
 ## TODO

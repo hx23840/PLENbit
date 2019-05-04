@@ -1,18 +1,20 @@
 {
     "name": "PLENbit",
-    "version": "0.0.0",
-    "description": "PLENbit Control Module",
+    "version": "1.0.2",
+    "description": "PLENBit Control Moudle",
     "dependencies": {
         "core": "*",
         "radio": "*"
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "plenbit.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": false,
-    "license": "MIT"
+    "license": "MIT",
+    "preferredEditor": "tsprj"
 }

@@ -1,6 +1,6 @@
 {
     "name": "PLENbit",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "PLENBit Control Moudle",
     "dependencies": {
         "core": "*",

@@ -167,9 +167,17 @@ namespace plenbit {
     //% block="Init Servo %angle|Angles"
     //% angles.defl="930,630,300,560,240,600,1000,770"
     export function init_servo(angles: string) {
-        let data = angles.split(",", 8);
-        SERVO_SET_INIT = data.map(function (x: string) { return parseInt(x) });
-        SERVO_ANGLE = data.map(function (x: string) { return parseInt(x) });
+        let data: number[] = []
+        while (angles.includes(",")) {
+            let index = angles.indexOf(",");
+            let angle = angles.substr(0, index);
+            data.push(parseInt(angle));
+            angles = angles.substr(index + 1, angles.length - index - 1);
+        }
+        data.push(parseInt(angles));
+
+        SERVO_SET_INIT = data;
+        SERVO_ANGLE = data;
         setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
     }
     //% blockId=PLEN:bit_motion_Soc

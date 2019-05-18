@@ -115,7 +115,7 @@ namespace plenbit {
     let init_PCA9865 = false;
 
     secretIncantation();
-    setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
+    //setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
 
     function secretIncantation() {
         write8(0xFE, 0x85);
@@ -167,8 +167,8 @@ namespace plenbit {
     //% block="Init Servo %angle|Angles"
     //% angles.defl="930,630,300,560,240,600,1000,770"
     export function init_servo(angles: string) {
-        SERVO_SET_INIT = angles.split(',').map(function (x) { return parseInt(x) });
-        SERVO_ANGLE = angles.split(',').map(function (x) { return parseInt(x) });
+        SERVO_SET_INIT = (<string>angles).split(',').map(function (x: string) { return parseInt(x) });
+        SERVO_ANGLE = (<string>angles).split(',').map(function (x: string) { return parseInt(x) });
         setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
     }
     //% blockId=PLEN:bit_motion_Soc

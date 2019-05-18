@@ -16,5 +16,6 @@
     ],
     "public": false,
     "license": "MIT",
-    "preferredEditor": "tsprj"
+    "preferredEditor": "tsprj",
+    "installedVersion": "workspace:4eac7609-c0c3-480b-65c6-2e6141f8c068"
 }

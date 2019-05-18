@@ -162,6 +162,15 @@ namespace plenbit {
     export function std_motion(filename: stdMotions) {
         motion(filename);
     }
+
+    //% blockId=PLEN:bit_init_servo
+    //% block="Init Servo %angle|Angles"
+    //% angles.defl="930,630,300,560,240,600,1000,770"
+    export function init_servo(angles: string) {
+        SERVO_SET_INIT = angles.split(',').map(function (x) { return parseInt(x) });
+        SERVO_ANGLE = angles.split(',').map(function (x) { return parseInt(x) });
+        setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
+    }
     //% blockId=PLEN:bit_motion_Soc
     //% block="Play Soccer_motion %filename"
     export function soccer_motion(filename: socMotions) {
@@ -506,4 +515,4 @@ namespace plenbit {
         return pins.analogReadPin(neko);
     }
 
-}
+} 

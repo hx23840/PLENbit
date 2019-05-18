@@ -108,8 +108,8 @@ namespace plenbit {
 
     let Motion_Speed = 15;
     let SERVO_NUM = 0x08;
-    let SERVO_SET_INIT = [1000, 630, 300, 600, 240, 600, 1000, 720];
-    let SERVO_ANGLE = [1000, 630, 300, 600, 240, 600, 1000, 720];
+    let SERVO_SET_INIT = [930, 630, 300, 580, 240, 600, 1000, 770];
+    let SERVO_ANGLE = [930, 630, 300, 580, 240, 600, 1000, 770];
     let romADR1 = 0x56;
     let init_BLE = false;
     let init_PCA9865 = false;

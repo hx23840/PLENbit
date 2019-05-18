@@ -108,8 +108,8 @@ namespace plenbit {
 
     let Motion_Speed = 15;
     let SERVO_NUM = 0x08;
-    let SERVO_SET_INIT = [930, 630, 300, 580, 240, 600, 1000, 770];
-    let SERVO_ANGLE = [930, 630, 300, 580, 240, 600, 1000, 770];
+    let SERVO_SET_INIT = [930, 630, 300, 560, 240, 600, 1000, 770];
+    let SERVO_ANGLE = [930, 630, 300, 560, 240, 600, 1000, 770];
     let romADR1 = 0x56;
     let init_BLE = false;
     let init_PCA9865 = false;
@@ -167,8 +167,9 @@ namespace plenbit {
     //% block="Init Servo %angle|Angles"
     //% angles.defl="930,630,300,560,240,600,1000,770"
     export function init_servo(angles: string) {
-        SERVO_SET_INIT = angles.split(",", 8).map(function (x: string) { return parseInt(x) });
-        SERVO_ANGLE = angles.split(",", 8).map(function (x: string) { return parseInt(x) });
+        let data = angles.split(",", 8);
+        SERVO_SET_INIT = data.map(function (x: string) { return parseInt(x) });
+        SERVO_ANGLE = data.map(function (x: string) { return parseInt(x) });
         setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
     }
     //% blockId=PLEN:bit_motion_Soc

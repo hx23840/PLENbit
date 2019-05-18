@@ -115,7 +115,7 @@ namespace plenbit {
     let init_PCA9865 = false;
 
     secretIncantation();
-    setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
+    //setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
 
     function secretIncantation() {
         write8(0xFE, 0x85);

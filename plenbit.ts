@@ -108,14 +108,14 @@ namespace plenbit {
 
     let Motion_Speed = 15;
     let SERVO_NUM = 0x08;
-    let SERVO_SET_INIT = [1000, 630, 300, 600, 240, 600, 1000, 720];
+    let SERVO_SET_INIT = [930, 630, 300, 560, 240, 600, 1000, 770];
     let SERVO_ANGLE = [1000, 630, 300, 600, 240, 600, 1000, 720];
     let romADR1 = 0x56;
     let init_BLE = false;
     let init_PCA9865 = false;
 
     secretIncantation();
-    //setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
+    setAngle([0, 0, 0, 0, 0, 0, 0, 0], 1000);
 
     function secretIncantation() {
         write8(0xFE, 0x85);
@@ -167,7 +167,7 @@ namespace plenbit {
     //% block="Init Servo %angle|Angles"
     //% angles.defl="930,630,300,560,240,600,1000,770"
     export function init_servo(angles: string) {
-        let data: number[] = []
+        let data: number[] = [];
         while (angles.includes(",")) {
             let index = angles.indexOf(",");
             let angle = angles.substr(0, index);
@@ -524,4 +524,8 @@ namespace plenbit {
         return pins.analogReadPin(neko);
     }
 
+    //% block
+    export function direction() {
+        return Math.atan2(input.magneticForce(Dimension.X), input.magneticForce(Dimension.Z)) * 180 / 3.14 + 180
+    }
 } 
